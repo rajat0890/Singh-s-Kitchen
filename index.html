@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Singh's Kitchen</title>
+	<link rel="stylesheet" type="text/css" href="Singh's Kitchen.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="Singh's Kitchen.js"></script>
+</head>
+<body>
+	<div class="header">
+		<div id="logo">
+			<label id="header_name">Singh's Kitchen</label><br>
+			<label id="quote">Feel close to your home with quality taste of home made food.</label>
+		</div>
+		<div>
+		<div id="contact_info"><label id="call">&#9742 : 9988848763</label><label id="mail">&#9993 : singhskitchen@gmail.com</label></div>
+		<div id="pages">
+			<div>
+				<button id="home" class="buttons" onclick="showHomePage()">Home</button>
+			</div>
+			<div class="dropdown">
+				<button id="menu" class="buttons">Menu</button>
+				<div class="dropdown-content">
+    				<button>Starters</button>
+    				<button>Main Course</button>
+    				<button>Biryani</button>
+  				</div>
+			</div>
+			<div class="dropdown">
+				<button id="order_online" class="buttons">Order Online</button>
+			</div>
+			<div>
+				<button id="about" class="buttons" onclick="showAboutUsScreen()">About Us</button>
+			</div>
+			<div>
+				<button id="contact" class="buttons" onclick="showContactUsScreen()">Contact Us</button>
+			</div>
+		</div>
+		</div>
+		<div>
+			<button id="sign_in" class="account_buttons">Sign In</button><br>
+			<button id="register" class="account_buttons">My Cart</button>
+		</div>
+	</div>
+	<div id="site_body">
+	<div class="left_panel">
+		<div>
+			<button id="home_page" class="left_panel_list" onclick="showHomePage()">Home Page</button>
+		</div>
+		<div class="list_dropdown">
+    		<button id="order_online" class="left_panel_list">Order Online</button>
+		</div>
+		<div>
+			<button id="cuisine" class="left_panel_list">Cuisines</button>
+		</div>
+		<div>
+			<button id="todays_special" class="left_panel_list">Today's Special</button>
+		</div>
+		<div>
+			<button id="recipies" class="left_panel_list">Recipies</button>
+		</div>
+		<div>
+			<button id="offers" class="left_panel_list">Offers</button>
+		</div>
+		<div>
+			<button id="location" class="left_panel_list">Location</button>
+		</div>
+	</div>
+	<div class="right_body">
+		<!-- <div id="services_info" class="body_food"></div> -->
+		<div id="slide_show">
+		<div>
+			<img src="chicken_biryani.jpg" class="body_food">
+			<div class="slide_info"><br>
+				<label>Order Online</label><br>
+				<button id="order_now">Order Now</button>
+			</div>
+			</div>
+			<div>
+			<img src="tandoori_chicken.jpg" class="body_food">
+			<div class="slide_info">
+			<br>
+				<label>Order On Call</label><br>
+				<label>&#9742 9988848763</label>
+			</div>
+			</div>
+			<div>
+			<img src="butter_chicken.jpg" class="body_food">
+			<div class="slide_info"><br>
+				<label>Take Away</label><br>
+				<label>Home Delivery</label>
+			</div>
+			</div>
+		</div>
+		<div class="contact_us_screen" id="contact_us_screen" style="display: none">
+			<div>
+				<label id="call_us_lbl">&#9742 9988848763, 9988858763</label>
+			</div>
+			<div>
+				<label id="email_us_lbl">&#9993 singhskitchen@gmail.com</label>
+			</div>
+		</div>
+		<div class="about_us" id="about_us" style="display: none;">
+		<br><br><br>
+			<p>Singh’s Kitchen is an initiative of Mr. Rajat Kumar Singh and Mrs. Anu Singh who, with their team, works hard to<br><br> ensure that people enjoy their daily meals. Singh’s Kitchen provides fresh home style nutritious food made in hygienic<br><br> conditions. Indian as well as Chinese cuisines are available here.</p>
+			<p>Besides a Tiffin service, Singh’s Kitchen also undertakes online order and order on call with home delivery and take<br><br> away services.</p>
+		</div>
+	</div>
+	<div>
+	<div class="footer">
+		<div id="footer_1">
+			<label id="footer_name">Singh's Kitchen</label>
+			<div>
+			<a href="#" class="fa fa-facebook"></a>
+			<a href="#" class="fa fa-twitter"></a>
+			<a href="#" class="fa fa-instagram"></a>
+			</div>
+		</div>
+		<div id="footer_2">
+			<label>#2087 Ground Floor,<br> Sector-15, Panchkula</label>
+		</div>
+		<div id="footer_3"><label id="email_lbl">Email : </label><input type="text" name="cust_email" id="cust_email"><input type="button" name="sign_up" value="Sign Up" id="sign_up"></div>
+	</div>
+	</div>
+	<input type="text" id="number" value="0" style="display: none;">
+	<input type="text" id="number1" value="0" style="display: none;">
+	<script>
+	var myIndex = 0;
+	carousel();
+	
+	function carousel() {
+	    var i;
+	    var x = document.getElementsByClassName("body_food");
+	    var y = document.getElementsByClassName("slide_info");
+	    for (i = 0; i < x.length; i++) {
+	       x[i].style.display = "none"; 
+	       y[i].style.display = "none"; 
+	    }
+	    myIndex++;
+	    if (myIndex > x.length) {myIndex = 1}    
+	    x[myIndex-1].style.display = "block";  
+		y[myIndex-1].style.display = "block"; 
+	    setTimeout(carousel, 3000);
+	}
+	</script>
+
+</body>
+</html>
